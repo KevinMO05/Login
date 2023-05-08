@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión</title>
+    <title>Iniciar Sesión</title>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600&display=swap');
@@ -25,112 +30,112 @@
             height: 649px;
             display: flex;
             justify-content: center;
-            background-image: url('{{ asset('img/register.png')}}');
-        }
-
-        .name {
-            width: 662px;
-            height: 40px;
-            position: absolute;
-            top: 270px;
-            left: 662px;
-            padding-left: 10px;
-            font-family: 'Exo';
-            font-size: 16px;
+            background-image: url('{{ asset("img/Login.png")}}');
         }
 
         .email {
-            width: 662px;
-            height: 40px;
+            width: 298.28px;
+            height: 29.08px;
             position: absolute;
-            left: 662px;
-            top: 350px;
+            top: 315.99px;
+            left: 283.91px;
             padding-left: 10px;
             font-family: 'Exo';
-            font-size: 16px;
+            font-weight: 500;
+            font-size: 15px;
         }
 
         .password {
-            width: 662px;
-            height: 40px;
+            width: 298.28px;
+            height: 29.08px;
             position: absolute;
-            left: 662px;
-            top: 430px;
+            top: 373.3px;
+            left: 283.91px;
             padding-left: 10px;
             font-family: 'Exo';
-            font-size: 16px;
+            font-weight: 500;
+            font-size: 15px;
         }
 
         .create {
-            width: 676px;
-            height: 55px;
+            width: 143px;
+            height: 43px;
             position: absolute;
-            left: 662px;
-            top: 520px;
+            top: 440px;
+            left: 360px;
             font-family: 'Exo';
-            font-size: 20px;
+            font-weight: 500;
+            font-size: 15px;
+            border-radius: 25px;
+            background-color: #E29D49;
+            color: white;
+            border: none;
         }
 
-        p {
-            margin-top: 590px;
-            margin-left: 200px;
-            font-family: 'Exo';
-            font-size: 14px;
-            color: rgba(93, 109, 126, 0.9);
-        }
-
-        a {
-            color: #769E9E;
-        }
-
-        .name,
         .email,
         .password {
             border-left: none;
             border-right: none;
             border-top: none;
-            border-bottom: 1.5px solid rgba(93, 109, 126, 0.5);
-        }
+            border-bottom: 1.5px solid #A1A1A1;
+            color: #c2c1c1;
+            background-color: transparent;
 
-        .create {
-            border: none;
-            background: #8BB2B2;
-            border-radius: 6px;
-            color: white;
         }
 
         .create:hover {
-            background: #769E9E;
+            background: #dc9237;
+            transition: .2s;
+        }
+
+        p {
+            margin-top: 515px;
+            margin-left: -420px;
+            font-family: 'Exo';
+            font-size: 13px;
+            color: #c2c1c1;
+        }
+
+        a {
+            color: #488dc9;
         }
 
     </style>
 </head>
+
 <body>
+    @include('sweetalert::alert')
     <div class="container">
-        <form action="{{route('login.main')}}" method="POST">
+        <form action="{{route('login.validation')}}" method="POST">
             @csrf
-            <input type="text" name="name" placeholder="Nombre Completo" class="name">
-            @error('name')
-            <br>
-            <small>*{{$message}}</small>
-            <br>
-            @enderror
-            <input type="email" name="email" placeholder="Correo electronico" class="email">
-            @error('email')
-            <br>
-            <small>*{{$message}}</small>
-            <br>
-            @enderror
+            <input type="email" name="email" placeholder="Email" class="email">
+
             <input type="password" name="password" placeholder="Contraseña" class="password">
-            @error('pass')
-            <br>
-            <small>*{{$message}}</small>
-            <br>
-            @enderror
-            <input type="submit" name="create" class="create" />
-            <p>Ya tienes una cuenta? <a href="#">Iniciar sesión</a></p>
+
+            <input type="submit" name="create" class="create" value="Iniciar Sesión" />
+
+            <p>No tienes una cuenta? <a href="{{route('login.register')}}">Registrate aquí</a></p>
         </form>
 
-    </div>
+        @if (session('success'))
+        <script>
+            swal.fire({
+                title: "¡Bienvenido!",
+                text: "{{ session('success') }}",
+                icon: "success"
+            });
+        </script>
+        @endif
+
+        @if (session('error'))
+        <script>
+            swal.fire({
+                title: "Error",
+                text: "{{ session('error') }}",
+                icon: "error"
+            });
+        </script>
+        @endif
 </body>
+
 </html>

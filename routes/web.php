@@ -15,13 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('login', [LoginController::class, 'register'])->name('login.register');
+Route::get('/', [LoginController::class, 'signin'])->name('login.signin');
 
-Route::get('login/signin', [LoginController::class, 'signin'])->name('login.signin');
+Route::get('register', [LoginController::class, 'register'])->name('login.register');
 
-Route::post('login/main', [LoginController::class, 'main'])->name('login.main');
+Route::get('login/{id}', [LoginController::class, 'store'])->name('login.store');
 
-Route::get('login/main', [LoginController::class, 'store'])->name('login.store');
+Route::post('validation', [LoginController::class, 'validation'])->name('login.validation');
+
+Route::post('login', [LoginController::class, 'main'])->name('login.main');
+
+
+
+
 
 
 
