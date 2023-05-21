@@ -378,7 +378,7 @@
         .trabajos-container {
             display: flex;
             justify-content: center;
-            height: 700px;
+            height: 1100px;
             width: 1200px;
             background: transparent;
         }
@@ -397,7 +397,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
-            gap: 10px;
+            gap: 30px;
             margin-top: 150px;
             margin-bottom: 20px;
         }
@@ -405,8 +405,153 @@
         .grid-item {
             background-color: #ccc;
             padding: 20px;
+            width: 480px;
+            border-radius: 50px;
+            
         }
-        
+
+         .one {
+            background-color: #ff2b2b;
+            padding: 20px;
+            text-align: center;
+            
+        }
+
+        .two {
+            background-color: #2b64ff;
+            padding: 20px;
+            text-align: center;
+            
+        }
+
+        .three {
+            background-color: #5ef753;
+            padding: 20px;
+            text-align: center;
+            
+        }
+
+        .four{
+            background-color: #7c2bff;
+            padding: 20px;
+            text-align: center;
+            
+        }
+
+        /* =========================== TEAM =========================================*/
+        .team {
+            max-width: 1300px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+            background: transparent;
+            align-items: center;
+
+        }
+        .team-container {
+            display: flex;
+            justify-content: center;
+            height: 900px;
+            width: 1200px;
+            background: transparent;
+        }
+        .tittle {
+            position: absolute;
+            font-family: 'Expletus Sans';
+            font-weight: 400;
+            font-size: 45px;
+            color: #fff;
+            top: 50px;
+            text-align: center;
+        }
+        .grid-team {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 30px;
+            margin-top: 150px;
+            margin-bottom: 20px;
+        }
+
+        .grid-item_team {
+            position: relative;
+            background-color: #ccc;
+            padding: 0px;
+            width: 430px;
+            border-radius: 0px;
+        }
+
+        .kevin  .image-container {
+            position: absolute;
+            background-color: #EE7474;
+            width: 220px;
+            height: 350px;
+            padding: 0;
+           
+        }
+        .info-container_kevin{
+            position: relative;
+            background-color: #D9D9D9;
+            width: 210px;
+            height: 350px;
+            right: -220px;
+            justify-content: center;
+            display: flex;
+        }
+        .kevin-cargo{
+            position: absolute;
+            color: #969696;
+            font-size: 15px;
+            font-family: "expletus sans";
+            font-weight: 500;
+            top: 120px;
+            margin-left: -40px;
+            text-align: center;
+            background: transparent;
+            width: 160px;
+        }
+
+        .kevin-nombre{
+            position: absolute;
+            color: #000000;
+            font-size: 16px;
+            font-family: "expletus sans";
+            font-weight: 600;
+            top: 170px;
+            margin-left: -15px;
+            text-align: center;
+            background: transparent;
+            width: 190px;
+        }
+
+        .kevin-email{
+            position: absolute;
+            color: #000000;
+            font-size: 12px;
+            font-family: "expletus sans";
+            font-weight: 600;
+            top: 330px;
+            margin-left: -5px;
+            text-align: center;
+            background: transparent;
+            width: 190px;
+        }
+
+        .kevin-cel{
+            position: absolute;
+            color: #969696;
+            font-size: 16px;
+            font-family: "expletus sans";
+            font-weight: 500;
+            top: 350px;
+            margin-left: -70px;
+            text-align: center;
+            background: transparent;
+            width: 190px;
+        }
+
     </style>
 
 </head>
@@ -468,13 +613,51 @@
                 </h1>
             
             <div class="grid-container">
-                <div class="grid-item">1</div>
-                <div class="grid-item">2</div>
-                <div class="grid-item">3</div>
-                <div class="grid-item">4</div>
+                <div class="grid-item one">JAVA</div>
+                <div class="grid-item two">PYHON</div>
+                <div class="grid-item three">JAVASCRIPT</div>
+                <div class="grid-item four">C++</div>
             </div>
         </div>
         </section>
+
+        <!-- ========================================= TEAM ================================================ -->
+        <section class="team">
+            <div class="team-container">
+                <h1 class="tittle">
+                    TEAM
+                </h1>
+                <div class="grid-team">
+                    <div class="grid-item_team kevin">
+                        <div class="image-container">
+                            <!-- Aqui va la imagen o foto de el representante de área -->
+                        </div>
+                        <div class="info-container_kevin">
+                            <p class="kevin-cargo">Desarrollador Web | CEO | Co-Founder</p>
+                            <p class="kevin-nombre"> Kevin Martinez Ojeda</p>
+                            <p class="kevin-email">Kevinmartinez130605@gmail.com</p>
+                            <p class="kevin-cel">+51 988-656-424</p>
+                        </div>
+                    </div>
+                    <div class="grid-item_team gabriel">
+                        <div class="image-container">
+
+                        </div>
+                    </div>
+                    <div class="grid-item_team cristian">
+                        <div class="image-container">
+
+                        </div>
+                    </div>
+                    <div class="grid-item_team juan">
+                        <div class="image-container">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
     </div>
     </div>
